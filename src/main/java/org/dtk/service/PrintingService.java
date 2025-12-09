@@ -7,9 +7,9 @@ public interface PrintingService {
     String INTEREST_SUM = "SUMA ODSETEK: ";
     String RATE_NUMBER = "NR: ";
     String YEAR = "ROK: ";
-    String MONTHS = " MIESIAC: ";
+    String MONTHS = " MIESIECY: ";
     String RATE = "RATA: ";
-    String INTEREST = "ODSETKI: ";
+    String INTEREST = "OPROCENTOWANIE: ";
     String CAPITAL = "KAPITAL: ";
     String LEFT = "POZOSTALO: ";
     String MORTGAGE_AMOUNT = "KWOTA KREDYTU: ";
