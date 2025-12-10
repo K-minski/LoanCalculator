@@ -1,23 +1,27 @@
 package org.dtk;
 
 import org.dtk.model.InputData;
-import org.dtk.service.PrintingService;
-import org.dtk.service.PrintingServiceImpl;
+import org.dtk.model.Rate;
+import org.dtk.service.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        PrintingService printingService = new PrintingServiceImpl();
-
-        InputData inputData = new InputData();
-
-        printingService.printInputDataInfo(inputData);
-
-        InputData inputData1 = new InputData()
+        InputData inputData = new InputData()
                 .withAmount(new BigDecimal("200000"))
                 .withMonthDuration(BigDecimal.valueOf(160));
 
-        printingService.printInputDataInfo(inputData1);
+        PrintingService printingService = new PrintingServiceImpl();
+        RateCalculationService rateCalculationService = new RateCalculationServiceImpl();
+
+        MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(
+                printingService,
+                rateCalculationService
+        );
+
+
+        mortgageCalculationService.calculate(inputData);
     }
 }
