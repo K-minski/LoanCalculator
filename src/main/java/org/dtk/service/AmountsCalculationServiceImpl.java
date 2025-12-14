@@ -79,7 +79,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
         BigDecimal residualAmount = previousRate.getMortgageResidual().getAmount();
 
         BigDecimal interestAmount = calculateInterestAmount(residualAmount, interestPercent);
-        BigDecimal capitalAmount = calculateDecreasingCapitalAmount(residualAmount, inputData.getMonthDuration());
+        BigDecimal capitalAmount = calculateDecreasingCapitalAmount(inputData.getAmount(), inputData.getMonthDuration());
         BigDecimal rateAmount = capitalAmount.add(interestAmount);
 
         return new RateAmounts(rateAmount, interestAmount, capitalAmount);
