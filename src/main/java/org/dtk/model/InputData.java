@@ -42,7 +42,7 @@ public class InputData {
         return bankMarginPercent;
     }
 
-    public BigDecimal getInterestValue(){
+    public BigDecimal getInterestPercent(){
         return wiborPercent.add(bankMarginPercent).divide(PERCENT, 10, RoundingMode.HALF_UP);
     }
 
